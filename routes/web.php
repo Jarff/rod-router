@@ -13,13 +13,13 @@
 Route::get('/', function() {
     PagesController::index();
 });
-Route::get('about', function() {
+Route::get('/about', function() {
     PagesController::about();
 });
-Route::get('blog', function() {
+Route::get('/blog', function() {
     PagesController::blog();
 });
-Route::get('blog/{blog_id}', function(Request $request){
+Route::get('/blog/{blog_id}', function(Request $request){
     $blog_id = $request->getAttribute('blog_id');
     PagesController::blog($blog_id);
 });
