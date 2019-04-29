@@ -8,7 +8,7 @@
 						<h3 class="w3ls_pvt-title">Business <br><span>Startup</span></h3>
 						<p class="text-sty-banner">Sed ut perspiciatis unde omnis iste natus doloremque
 							laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
-						<a href="about.html" class="btn button-style mt-md-5 mt-4">Read More</a>
+						<a href="./about" class="btn button-style mt-md-5 mt-4">Read More</a>
 					</div>
 					<div class="banner-img">
 						<img src="./images/banner.png" alt="" class="img-fluid">
@@ -17,12 +17,12 @@
 			</div>
 			<!-- animations effects -->
 			<div class="icon-effects-w3l">
-				<img src="./images/shape1.png" alt="" class="img-fluid shape-wthree shape-w3-one">
-				<img src="./images/shape2.png" alt="" class="img-fluid shape-wthree shape-w3-two">
-				<img src="./images/shape3.png" alt="" class="img-fluid shape-wthree shape-w3-three">
-				<img src="./images/shape5.png" alt="" class="img-fluid shape-wthree shape-w3-four">
-				<img src="./images/shape4.png" alt="" class="img-fluid shape-wthree shape-w3-five">
-				<img src="./images/shape6.png" alt="" class="img-fluid shape-wthree shape-w3-six">
+				<img src="./src/assets/images/shape1.png" alt="" class="img-fluid shape-wthree shape-w3-one">
+				<img src="./src/assets/images/shape2.png" alt="" class="img-fluid shape-wthree shape-w3-two">
+				<img src="./src/assets/images/shape3.png" alt="" class="img-fluid shape-wthree shape-w3-three">
+				<img src="./src/assets/images/shape5.png" alt="" class="img-fluid shape-wthree shape-w3-four">
+				<img src="./src/assets/images/shape4.png" alt="" class="img-fluid shape-wthree shape-w3-five">
+				<img src="./src/assets/images/shape6.png" alt="" class="img-fluid shape-wthree shape-w3-six">
 			</div>
 			<!-- //animations effects -->
 		</div>
@@ -36,26 +36,26 @@
 			<div class="row about-bottom-w3l text-center mt-4">
 				<div class="col-lg-4 about-grid">
 					<div class="about-grid-main">
-						<img src="./images/img1.png" alt="" class="img-fluid">
+						<img src="./src/assets/images/img1.png" alt="" class="img-fluid">
 						<h4 class="my-4">Dolor Sit</h4>
 						<p> Ut enim ad minim veniam, quis nostrud.Excepteur sint occaecat cupidatat non proident</p>
-						<a href="about.html" class="button-w3ls btn mt-sm-5 mt-4">Read More</a>
+						<a href="./about" class="button-w3ls btn mt-sm-5 mt-4">Read More</a>
 					</div>
 				</div>
 				<div class="col-lg-4 about-grid my-lg-0 my-5">
 					<div class="about-grid-main">
-						<img src="./images/img2.png" alt="" class="img-fluid">
+						<img src="./src/assets/images/img2.png" alt="" class="img-fluid">
 						<h4 class="my-4">Conse Tetur</h4>
 						<p>Ut enim ad minim veniam, quis nostrud.Excepteur sint occaecat cupidatat non proident</p>
-						<a href="about.html" class="button-w3ls btn mt-sm-5 mt-4">Read More</a>
+						<a href="./about" class="button-w3ls btn mt-sm-5 mt-4">Read More</a>
 					</div>
 				</div>
 				<div class="col-lg-4 about-grid">
 					<div class="about-grid-main">
-						<img src="./images/img3.png" alt="" class="img-fluid">
+						<img src="./src/assets/images/img3.png" alt="" class="img-fluid">
 						<h4 class="my-4">Adip Cing</h4>
 						<p>Ut enim ad minim veniam, quis nostrud.Excepteur sint occaecat cupidatat non proident</p>
-						<a href="about.html" class="button-w3ls btn mt-sm-5 mt-4">Read More</a>
+						<a href="./about" class="button-w3ls btn mt-sm-5 mt-4">Read More</a>
 					</div>
 				</div>
 			</div>
@@ -79,10 +79,10 @@
 						<li>Business Growth</li>
 						<li>Technical Support</li>
 					</ul>
-					<a href="about.html" class="btn button-style button-style-2 mt-sm-5 mt-4">Read More</a>
+					<a href="./about" class="btn button-style button-style-2 mt-sm-5 mt-4">Read More</a>
 				</div>
 				<div class="col-lg-6 left-wthree-img text-right">
-					<img src="./images/b1.png" alt="" class="img-fluid mt-5" />
+					<img src="./src/assets/images/b1.png" alt="" class="img-fluid mt-5" />
 				</div>
 			</div>
 		</div>
@@ -139,7 +139,7 @@
 		<div class="container py-xl-5 py-lg-3">
 			<div class="row">
 				<div class="col-lg-5 left-img-w3ls">
-					<img src="./images/b2.png" alt="" class="img-fluid" />
+					<img src="./src/assets/images/b2.png" alt="" class="img-fluid" />
 				</div>
 				<div class="col-lg-7 right-img-w3ls pl-lg-4 mt-lg-2 mt-4">
 					<div class="bott-w3ls mr-xl-5">

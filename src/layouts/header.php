@@ -46,8 +46,8 @@
 							<label for="drop" class="toggle">Menu</label>
 							<input type="checkbox" id="drop" />
 							<ul class="menu">
-								<li><a href="./" class="active">Home</a></li>
-								<li><a href="./about">About Us</a></li>
+								<li><a href="./" class="<?=($this->request->opt->url == '/') ? 'active' : '' ?>">Home</a></li>
+								<li><a href="./about" class="<?=($this->request->opt->url == '/about') ? 'active' : '' ?>">About Us</a></li>
 								<li><a href="pricing.html">Pricing</a></li>
 								<li>
 									<!-- First Tier Drop Down -->
@@ -60,8 +60,8 @@
 										<li><a href="faq.html" class="drop-text">Faq's</a></li>
 										<li><a href="404.html" class="drop-text">404</a></li>
 										<li><a href="#stats" class="drop-text">Statistics</a></li>
-										<li><a href="about.html" class="drop-text">Why Choose Us?</a></li>
-										<li><a href="about.html" class="drop-text">Our Team</a></li>
+										<li><a href="./about" class="drop-text">Why Choose Us?</a></li>
+										<li><a href="./about" class="drop-text">Our Team</a></li>
 										<li><a href="#partners" class="drop-text">Partners</a></li>
 									</ul>
 								</li>

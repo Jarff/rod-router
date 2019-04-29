@@ -21,10 +21,10 @@
 					<p class="mt-2">Suspendisse porta erat sit amet eros sagittis, quis hendrerit libero aliquam. Fusce semper augue
 						ac dolor
 						efficitur.</p>
-					<a href="about.html" class="btn button-style mt-sm-5 mt-4">Read More</a>
+					<a href="./about" class="btn button-style mt-sm-5 mt-4">Read More</a>
 				</div>
 				<div class="col-lg-7 welcome-right text-center mt-lg-0 mt-5">
-					<img src="images/about.png" alt="" class="img-fluid" />
+					<img src="./src/assets/images/about.png" alt="" class="img-fluid" />
 				</div>
 			</div>
 		</div>

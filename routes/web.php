@@ -10,16 +10,20 @@
 |
 */
 
-Route::get('/', function() {
+Route::get('/', function(Request $request) {
+    PagesController::setRequest($request);
     PagesController::index();
 });
-Route::get('/about', function() {
+Route::get('/about', function(Request $request) {
+    PagesController::setRequest($request);
     PagesController::about();
 });
-Route::get('/blog', function() {
+Route::get('/blog', function(Request $request) {
+    PagesController::setRequest($request);
     PagesController::blog();
 });
 Route::get('/blog/{blog_id}', function(Request $request){
+    PagesController::setRequest($request);
     $blog_id = $request->getAttribute('blog_id');
     PagesController::blog($blog_id);
 });

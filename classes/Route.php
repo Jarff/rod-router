@@ -19,12 +19,21 @@ class Route{
             $url = $_SERVER['REQUEST_URI'];
         }
         // echo $_SERVER['REQUEST_METHOD'];
-        if(preg_match('/(src)\/(assets)\/(css)/', $_SERVER['REQUEST_URI'], $output)){
+        if(preg_match('/(src)\/(assets)\//', $_SERVER['REQUEST_URI'], $output)){
             if(file_exists('./' . $url)){
                 include_once('./' . $url);
                 die();
             }else{
-                self::error(404);
+                if(preg_match('/(?)/', $_SERVER['REQUEST_URI'], $output)){
+                    $_str = explode('?', $url);
+
+                    if(file_exists('.' . $_str[0])){
+                        include_once('.' . $_str[0]);
+                        die();
+                    }
+                }else{
+                    self::error(404);
+                }
             }
         }
         self::$validRoutes[] = $route;
@@ -46,13 +55,13 @@ class Route{
             $route = implode('/', $array_requested_route);
 
             if($url == $route){
-                $function->__invoke(new Request($y[0], end($array)));
+                $function->__invoke(new Request(['url' => $url, 'index' => $y[0], 'value' => end($array)]));
                 die();
             }
         }
         // echo $_GET['url'].'/'.end($array).',';
         if($url == $route){
-            $function->__invoke(new Request());
+            $function->__invoke(new Request(['url' => $url]));
             die();
         }
     }
@@ -62,15 +71,5 @@ class Route{
         echo "<h1>404 Not Found</h1>";
         echo "The page that you have requested could not be found.";
         die();
-    }
-}
-
-class Request{
-    public $attribute = [];
-    public function __construct($idx = '', $value = ''){
-        $this->attribute[$idx] = $value;
-    }
-    public function getAttribute($index){
-        return $this->attribute[$index];
     }
 }
