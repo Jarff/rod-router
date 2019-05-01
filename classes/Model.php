@@ -1,6 +1,15 @@
 <?php
 namespace Panel;
+
+use \Panel\Connect as Connection;
+
 class Model{
+    public $_table;
+
+    public function __construct(){
+
+    }
+
     public static function find($id){
         $query = "SELECT * FROM {$this->table} WHERE {$this->primary_key} = '{$id}'";
         Connection::ejecutar_sentencia($query);
@@ -12,24 +21,13 @@ class Model{
 
     }
 
-    public static function all(){
-        $data = [
-            [
-                'blog_id' => 1,
-                'title' => 'Lorem ipsum',
-                'body' => 'Lorem ipsum dolor sit amet'
-            ],
-            [
-                'blog_id' => 2,
-                'title' => 'Lorem ipsum',
-                'body' => 'Lorem ipsum dolor sit amet'
-            ],
-            [
-                'blog_id' => 3,
-                'title' => 'Lorem ipsum',
-                'body' => 'Lorem ipsum dolor sit amet'
-            ]
-        ];
+    public function all(){
+        $sql = "SELECT * FROM {$this->_table} WHERE 1 = 1";
+        Connection::ejecutar_sentencia($sql);
+        $data = [];
+        while($_row = Connection::fetchAssoc()){
+            array_push($data, $_row);
+        }
         return $data;
     }
 }

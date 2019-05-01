@@ -1,4 +1,5 @@
 <?php
+use \Panel\Tools as Tools;
 class Route{
 
     private static $development = true;
@@ -6,11 +7,50 @@ class Route{
 
     public static function get($route, $function){
         if($_SERVER['REQUEST_METHOD'] != 'GET'){
-            header("HTTP/1.0 208 Method not allowed");
-            echo "<h1>208 Method not allowed</h1>";
-            echo "Expecting GET method.";
-            die();
+            // header("HTTP/1.0 405 Method not allowed");
+            // echo "<h1>405 Method not allowed</h1>";
+            // echo "Expecting GET method.";
+            // die();
+            //Debería regresar un response
+        }else{
+            if(self::$development){
+                $url = explode('/', $_SERVER['REQUEST_URI']);
+                unset($url[1]);
+                $url = implode('/', $url);                
+            }else{
+                $url = $_SERVER['REQUEST_URI'];
+            }
+            // echo $_SERVER['REQUEST_METHOD'];
+            self::includeAssets($url);
+           
+            self::$validRoutes[] = $route;
+            // echo 'route: '.$route.',';
+            // echo 'url: '.$_GET['url'].',';
+            //  echo 'url: '.$url;
+            if($route == '/' && $url == 'index.php'){
+                $function->__invoke(new Request());
+                die();
+            }
+    
+            $array_requested_route = explode('/', $route);
+            $array = explode('/', $_SERVER['REQUEST_URI']);
+    
+            if(preg_match('/{/', end($array_requested_route))){
+                $req_url = self::getDynamicAttr($array_requested_route, $array, $url, $route);
+                if($req_url['success']){
+                    $function->__invoke(new Request($req_url));
+                    die();
+                }
+            }
+            // echo $_GET['url'].'/'.end($array).',';
+            if($url == $route){
+                $function->__invoke(new Request(['url' => $url]));
+                die();
+            }
         }
+    }
+
+    public static function post($route, $function){
         if(self::$development){
             $url = explode('/', $_SERVER['REQUEST_URI']);
             unset($url[1]);
@@ -19,7 +59,44 @@ class Route{
             $url = $_SERVER['REQUEST_URI'];
         }
         // echo $_SERVER['REQUEST_METHOD'];
-        if(preg_match('/(src)\/(assets)\//', $_SERVER['REQUEST_URI'], $output)){
+        self::includeAssets($url);
+       
+        self::$validRoutes[] = $route;
+        // echo 'route: '.$route.',';
+        // echo 'url: '.$_GET['url'].',';
+        //  echo 'url: '.$url;
+        if($route == '/' && $url == 'index.php'){
+            $function->__invoke(new Request());
+            die();
+        }
+
+        $array_requested_route = explode('/', $route);
+        $array = explode('/', $_SERVER['REQUEST_URI']);
+
+        if(preg_match('/{/', end($array_requested_route))){
+            $req_url = self::getDynamicAttr($array_requested_route, $array, $url, $route);
+            if($req_url['success']){
+                $function->__invoke(new Request($req_url));
+                die();
+            }
+        }
+        // echo $_GET['url'].'/'.end($array).',';
+        if($url == $route){
+            $function->__invoke(new Request(['url' => $url]));
+            die();
+        }
+        print_r($_POST);
+    }
+
+    private static function includeAssets($url){
+        $env = Tools::getEnv();
+        $new_arr = explode('/', $env->assets_dir);
+        $string_match = '/';
+        foreach($new_arr as $el){
+            $string_match .= '('.$el.')\/';
+        }
+        $string_match .= '/';
+        if(preg_match($string_match, $_SERVER['REQUEST_URI'], $output)){
             if(file_exists('./' . $url)){
                 include_once('./' . $url);
                 die();
@@ -36,33 +113,19 @@ class Route{
                 }
             }
         }
-        self::$validRoutes[] = $route;
-        // echo 'route: '.$route.',';
-        // echo 'url: '.$_GET['url'].',';
-        //  echo 'url: '.$url;
-        if($route == '/' && $url == 'index.php'){
-            $function->__invoke(new Request());
-            die();
-        }
+    }
 
-        $array_requested_route = explode('/', $route);
-        $array = explode('/', $_SERVER['REQUEST_URI']);
-
-        if(preg_match('/{/', end($array_requested_route))){
-            $x = explode('{', end($array_requested_route));
-            $y = explode('}', $x[1]);
-            $array_requested_route[count($array_requested_route)-1] = end($array);
-            $route = implode('/', $array_requested_route);
-
-            if($url == $route){
-                $function->__invoke(new Request(['url' => $url, 'index' => $y[0], 'value' => end($array)]));
-                die();
-            }
-        }
-        // echo $_GET['url'].'/'.end($array).',';
+    public static function getDynamicAttr($array_requested_route, $array, $url, $route){
+        $x = explode('{', end($array_requested_route));
+        $y = explode('}', $x[1]);
+        $array_requested_route[count($array_requested_route)-1] = end($array);
+        $route = implode('/', $array_requested_route);
         if($url == $route){
-            $function->__invoke(new Request(['url' => $url]));
-            die();
+            $arr = ['success' => true, 'url' => $url, 'idx' => $y[0], 'value' => end($array)];
+            return $arr;
+        }else{
+            $arr = ['success' => false];
+            return $arr;
         }
     }
 

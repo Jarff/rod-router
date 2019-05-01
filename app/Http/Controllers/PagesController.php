@@ -11,6 +11,7 @@ class PagesController extends Controller{
     public function blog($blog_id = ''){
         if($blog_id != ''){
             if($blog_id != 0){
+                $data = Blog::all();
                 return self::view('pages/blog-detalle')->with($data[$blog_id - 1]);
             }else{
                 header("HTTP/1.0 404 Not Found");
@@ -18,8 +19,15 @@ class PagesController extends Controller{
                 echo "The page that you have requested could not be found.";
             }
         }else{
-            $data = Blog::all();
+            $blog = new Blog();
+            $data = $blog->all();
             return self::view('pages/blog')->with($data);
         }
+    }
+    public function pricing(){
+        return self::view('pages/pricing')->render();
+    }
+    public function contact(){
+        return self::view('pages/contact')->render();
     }
 }

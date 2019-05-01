@@ -18,6 +18,14 @@ Route::get('/about', function(Request $request) {
     PagesController::setRequest($request);
     PagesController::about();
 });
+Route::get('/pricing', function(Request $request){
+    PagesController::setRequest($request);
+    PagesController::pricing();
+});
+Route::get('/contact', function(Request $request){
+    PagesController::setRequest($request);
+    PagesController::contact();
+});
 Route::get('/blog', function(Request $request) {
     PagesController::setRequest($request);
     PagesController::blog();

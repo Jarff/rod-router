@@ -11,18 +11,18 @@
 						<a href="./about" class="btn button-style mt-md-5 mt-4">Read More</a>
 					</div>
 					<div class="banner-img">
-						<img src="./images/banner.png" alt="" class="img-fluid">
+						<img src="./src/assets/pages/images/banner.png" alt="" class="img-fluid">
 					</div>
 				</div>
 			</div>
 			<!-- animations effects -->
 			<div class="icon-effects-w3l">
-				<img src="./src/assets/images/shape1.png" alt="" class="img-fluid shape-wthree shape-w3-one">
-				<img src="./src/assets/images/shape2.png" alt="" class="img-fluid shape-wthree shape-w3-two">
-				<img src="./src/assets/images/shape3.png" alt="" class="img-fluid shape-wthree shape-w3-three">
-				<img src="./src/assets/images/shape5.png" alt="" class="img-fluid shape-wthree shape-w3-four">
-				<img src="./src/assets/images/shape4.png" alt="" class="img-fluid shape-wthree shape-w3-five">
-				<img src="./src/assets/images/shape6.png" alt="" class="img-fluid shape-wthree shape-w3-six">
+				<img src="./src/assets/pages/images/shape1.png" alt="" class="img-fluid shape-wthree shape-w3-one">
+				<img src="./src/assets/pages/images/shape2.png" alt="" class="img-fluid shape-wthree shape-w3-two">
+				<img src="./src/assets/pages/images/shape3.png" alt="" class="img-fluid shape-wthree shape-w3-three">
+				<img src="./src/assets/pages/images/shape5.png" alt="" class="img-fluid shape-wthree shape-w3-four">
+				<img src="./src/assets/pages/images/shape4.png" alt="" class="img-fluid shape-wthree shape-w3-five">
+				<img src="./src/assets/pages/images/shape6.png" alt="" class="img-fluid shape-wthree shape-w3-six">
 			</div>
 			<!-- //animations effects -->
 		</div>
@@ -36,7 +36,7 @@
 			<div class="row about-bottom-w3l text-center mt-4">
 				<div class="col-lg-4 about-grid">
 					<div class="about-grid-main">
-						<img src="./src/assets/images/img1.png" alt="" class="img-fluid">
+						<img src="./src/assets/pages/images/img1.png" alt="" class="img-fluid">
 						<h4 class="my-4">Dolor Sit</h4>
 						<p> Ut enim ad minim veniam, quis nostrud.Excepteur sint occaecat cupidatat non proident</p>
 						<a href="./about" class="button-w3ls btn mt-sm-5 mt-4">Read More</a>
@@ -44,7 +44,7 @@
 				</div>
 				<div class="col-lg-4 about-grid my-lg-0 my-5">
 					<div class="about-grid-main">
-						<img src="./src/assets/images/img2.png" alt="" class="img-fluid">
+						<img src="./src/assets/pages/images/img2.png" alt="" class="img-fluid">
 						<h4 class="my-4">Conse Tetur</h4>
 						<p>Ut enim ad minim veniam, quis nostrud.Excepteur sint occaecat cupidatat non proident</p>
 						<a href="./about" class="button-w3ls btn mt-sm-5 mt-4">Read More</a>
@@ -52,7 +52,7 @@
 				</div>
 				<div class="col-lg-4 about-grid">
 					<div class="about-grid-main">
-						<img src="./src/assets/images/img3.png" alt="" class="img-fluid">
+						<img src="./src/assets/pages/images/img3.png" alt="" class="img-fluid">
 						<h4 class="my-4">Adip Cing</h4>
 						<p>Ut enim ad minim veniam, quis nostrud.Excepteur sint occaecat cupidatat non proident</p>
 						<a href="./about" class="button-w3ls btn mt-sm-5 mt-4">Read More</a>
@@ -82,7 +82,7 @@
 					<a href="./about" class="btn button-style button-style-2 mt-sm-5 mt-4">Read More</a>
 				</div>
 				<div class="col-lg-6 left-wthree-img text-right">
-					<img src="./src/assets/images/b1.png" alt="" class="img-fluid mt-5" />
+					<img src="./src/assets/pages/images/b1.png" alt="" class="img-fluid mt-5" />
 				</div>
 			</div>
 		</div>
@@ -139,7 +139,7 @@
 		<div class="container py-xl-5 py-lg-3">
 			<div class="row">
 				<div class="col-lg-5 left-img-w3ls">
-					<img src="./src/assets/images/b2.png" alt="" class="img-fluid" />
+					<img src="./src/assets/pages/images/b2.png" alt="" class="img-fluid" />
 				</div>
 				<div class="col-lg-7 right-img-w3ls pl-lg-4 mt-lg-2 mt-4">
 					<div class="bott-w3ls mr-xl-5">
@@ -229,76 +229,4 @@
 		</div>
 	</section>
 	<!-- //partners -->
-
-	<!-- footer -->
-	<footer class="bg-li py-5">
-		<div class="container py-xl-5 py-lg-3">
-			<!-- subscribe -->
-			<div class="subscribe mx-auto">
-				<div class="icon-effect-w3">
-					<span class="fa fa-envelope"></span>
-				</div>
-				<h2 class="tittle text-center font-weight-bold">Stay Updated!</h2>
-				<p class="sub-tittle text-center mt-3 mb-sm-5 mb-4">Sed do eiusmod tempor incididunt ut labore et dolore magna
-					aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-				<form action="#" method="post" class="subscribe-wthree pt-2">
-					<div class="d-flex subscribe-wthree-field">
-						<input class="form-control" type="email" placeholder="Enter your email..." name="email" required="">
-						<button class="btn form-control w-50" type="submit">Subscribe</button>
-					</div>
-				</form>
-			</div>
-			<!-- //subscribe -->
-		</div>
-	</footer>
-	<!-- //footer -->
-	<!-- copyright bottom -->
-	<div class="copy-bottom bg-li py-4 border-top">
-		<div class="container-fluid">
-			<div class="d-md-flex px-md-3 position-relative text-center">
-				<!-- footer social icons -->
-				<div class="social-icons-footer mb-md-0 mb-3">
-					<ul class="list-unstyled">
-						<li>
-							<a href="#">
-								<span class="fa fa-facebook"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-twitter"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-google-plus"></span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span class="fa fa-instagram"></span>
-							</a>
-						</li>
-					</ul>
-				</div>
-				<!-- //footer social icons -->
-				<!-- copyright -->
-				<div class="copy_right mx-md-auto mb-md-0 mb-3">
-					<p class="text-bl let">© 2019 Startup. All rights reserved | Design by
-						<a href="http://w3layouts.com/" target="_blank">W3layouts</a>
-					</p>
-				</div>
-				<!-- //copyright -->
-				<!-- move top icon -->
-				<a href="#home" class="move-top text-center">
-					<span class="fa fa-level-up" aria-hidden="true"></span>
-				</a>
-				<!-- //move top icon -->
-			</div>
-		</div>
-	</div>
-	<!-- //copyright bottom -->
-
-</body>
-
-</html>
+<?php include_once('./src/layouts/footer.php'); ?>

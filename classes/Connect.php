@@ -1,12 +1,10 @@
 <?php
-namespace Panel\Classes\Mysql;
+namespace Panel;
+
+use \Panel\Tools as Tools;
 
 class Connect
-{
-    protected static $host = 'localhost';    
-    protected static $user = 'locker13_locker';
-    protected static $password = 'locker07$';
-    protected static $bd = 'locker13_abstractpanel';    
+{   
     protected static $affected_rows;
     public static $temporal;
     private static $conexion;
@@ -15,6 +13,11 @@ class Connect
 	}
 
     private function conectar(){        
+        $_env = Tools::getEnv();
+        self::$host = $_env->db_host;
+        self::$user = $_env->db_user;
+        self::$password = $_env->db_password;
+        self::$bd = $_env->db_name;
         self::$conexion = mysqli_connect(self::$host, self::$user, self::$password);
         mysqli_select_db(self::$conexion, self::$bd);
     }
